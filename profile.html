@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Student Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadProfile()">
+    <div class="portal-layout">
+        <aside class="sidebar">
+            <img src="assets/avatar.svg" class="side-avatar" id="sideImage" alt="Profile avatar"><p id="sideName" class="side-name">Grade 9 Student</p>
+            <a  href="dashboard.html">Dashboard</a>
+            <a  class="notebook-link " href="notebooks.html">Notebooks</a>
+            <a  href="tasks.html">Tasks</a>
+            <a class="active" href="profile.html">Profile</a>
+            <a href="#" onclick="logoutUser()">Log out</a>
+        </aside>
+    <main class="content-area">
+        <div class="topbar">
+            <input id="searchInput" onkeyup="quickSearch()" class="search-box form-control" placeholder="Search">
+            <a href="profile.html" class="account-pill" id="accountName">Account</a>
+        </div>
+        <p id="searchResult" class="small"></p>
+        <section class="profile-panel clearfix">
+            <img src="assets/avatar.svg" class="profile-big-avatar" id="profileImage" alt="Profile picture">
+            <div class="profile-form">
+                <label for="profileUsername">Username:</label>
+                <input id="profileUsername" class="form-control" type="text">
+                <label for="profileDisplay">Display Name:</label>
+                <input id="profileDisplay" class="form-control" type="text">
+                <label for="profilePassword">Password:</label>
+                <input id="profilePassword" class="form-control" type="password"><label for="pictureInput">Profile Picture:</label>
+                <input id="pictureInput" class="form-control" type="file" accept="image/*" onchange="previewPicture(this)">
+                <button class="btn btn-portal mt-4" onclick="saveProfile()">Save Profile</button>
+                <p id="saveMessage" class="mt-2">
+                </p>
+            </div>
+            <button class="btn btn-light mt-3" onclick="document.getElementById('pictureInput').click()">PROFILE PICTURE</button>
+        </section>
+        <footer class="footer-text">Names: Group Members | Grade 9 - Section | Sources: ICT project PDF instructions, w3schools.com, Bootstrap Docs</footer>
+    </main>
+    </div>
+    <script src="proj.js"></script>   
+</body>
+</html>
